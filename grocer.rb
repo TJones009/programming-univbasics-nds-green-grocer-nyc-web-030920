@@ -38,13 +38,26 @@ def apply_coupons(cart, coupons)
         if cart[new_name]
           cart[new_name][:count] += coupon[:num]
         else
-          cart
+          cart[new_name] = {
+            count: coupon[:num],
+            price: coupon[:cost]/coupon[:num],
+            clearance: cart[coupon[:item]][:clearance]
+          }
+        end
+        cart[coupon[:item]][:count] -= coupon[:num]
+      end
+    end
+  end
+  cart
 end
 
 def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  
+  cart
+  
 end
 
 def checkout(cart, coupons)
