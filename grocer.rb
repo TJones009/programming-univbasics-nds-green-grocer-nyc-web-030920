@@ -18,19 +18,13 @@ def consolidate_cart(cart)
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   
-  cc_hash = {}
-  cart.each do |item|
-    if cc_hash[item.keys[0]]
-      cc_hash[item.keys[0]][:count] += 1
-    else
-      cc_hash[item.keys[0]] = {
-        count: 1,
-        price: item.values[0][:price],
-        clearance: item.values[0][:clearance]
-      }
-    end
-  end
-  cc_hash
+  new_cart = []
+  i = 0
+  while ()
+  
+end
+  
+  
 end
 
 def apply_coupons(cart, coupons)
