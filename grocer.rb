@@ -30,6 +30,15 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  
+  coupons.each do |coupon|
+    if cart.keys.include? coupon[:item]
+      if cart[coupon[:item]][:count] <= coupon[:num]
+        new_name = "#{coupon[:item]} W/coupon"
+        if cart[new_name]
+          cart[new_name][:count] += coupon[:num]
+        else
+          cart
 end
 
 def apply_clearance(cart)
